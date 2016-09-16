@@ -83,6 +83,9 @@
         social.src = "http://splix-io.org/chrome/splix-io.org.html";
         social.frameBorder = 0;
         social.scrolling = "no";
+        social.width = "200px";
+        social.height = "70px";
+        social.display = "block";
         document.getElementById("cornerLinks").appendChild(social);
         document.getElementById('nameInput').value = 'splix-io.org';
         document.getElementById("social").innerHTML = "";
