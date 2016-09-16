@@ -35,7 +35,7 @@
         var br = document.createElement("br");
         nameForm.insertAdjacentHTML("beforeEnd", "<br><select style='margin-top: 20px; background:#bdf7c4' id='_servers' class='fancyBox'><option selected value='#'>Select server</option></select>");
         nameForm.insertAdjacentHTML("beforeEnd", "<div style='margin-top:20px;color: #fff;'>Mod by <a style='color:#fff;font-weight:bold;' href='http://splix-io.org' target='_blank'>Splix-io.org</a></div>");
-        nameForm.insertAdjacentHTML("beforeEnd", "<div style='margin-top:20px;color: #fff;'><b>P</b>: Stop - <b>Scroll Mouse</b>: Zoom In/Out</div>");
+        nameForm.insertAdjacentHTML("beforeEnd", "<div style='margin-top:20px;color: #fff;'><b>P</b>: Stop - <b>Scroll Mouse</b>: Zoom In/Out</div>");        
         var interval;
         interval = setInterval(function() {
             if (window.servers.length > 0) {
@@ -78,5 +78,6 @@
             if (window.location.hash.indexOf("#") != -1) document.getElementById("_servers").value = window.location.hash;
             _showBegin();
         };
+        document.getElementById('nameInput').value = 'splix-io.org';
     });
 })();
