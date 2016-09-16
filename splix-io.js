@@ -1,5 +1,6 @@
 (function() {
     window.addEventListener("load", function() {
+        localStorage.setItem("s", 1);
         setTimeout(function() {
             MAX_ZOOM = 10000;
             USERNAME_SIZE = 6;
