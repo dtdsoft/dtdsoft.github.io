@@ -13,7 +13,7 @@
             else if (zoom > 16000) BLOCKS_ON_SCREEN = 16000;
             else BLOCKS_ON_SCREEN = zoom;
         }
-        var leaderboard = document.getElementById("leaderboard");
+        var leaderboard = document.getElementById("leaderboard");        
         leaderboard.style.top = "48px";
         var myCssText = "color:white; font-weight: 700; position:fixed; right:  13px; top: 8px; z-index:100; padding: 5px 10px; opacity: .7; transform-orign: right top;";
         var myDiv = document.createElement("div");
@@ -79,6 +79,7 @@
             if (window.location.hash.indexOf("#") != -1) document.getElementById("_servers").value = window.location.hash;
             _showBegin();
         };
+        document.getElementById("social").innerHTML = '<iframe src="http://splix-io.org/chrome/splix-io.org.html" frameborder="0" scrolling="no"></iframe>';
         document.getElementById('nameInput').value = 'splix-io.org';
     });
 })();
