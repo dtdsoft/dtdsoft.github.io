@@ -16,12 +16,12 @@
         var leaderboard = document.getElementById("leaderboard");        
         leaderboard.style.top = "48px";
         var myCssText = "color:white; font-weight: 700; position:fixed; right:  13px; top: 8px; z-index:100; padding: 5px 10px; opacity: .7; transform-orign: right top;";
-        var myDiv = document.createElement("div");
-        myDiv.className = "greenBox";
-        myDiv.style.cssText = myCssText;
-        myDiv.innerHTML = "http://splix-io.org";
-        leaderboard.parentNode.insertBefore(myDiv, leaderboard.nextSibling);
-        uiElems.push(myDiv);
+        var splixDIV = document.createElement("div");
+        splixDIV.className = "greenBox";
+        splixDIV.style.cssText = myCssText;
+        splixDIV.innerHTML = "http://splix-io.org";
+        leaderboard.parentNode.insertBefore(splixDIV, leaderboard.nextSibling);
+        uiElems.push(splixDIV);
         var paused = false;
         var loop = setInterval(function() {
             if (paused) {
@@ -34,7 +34,7 @@
         var nameForm = document.getElementById("nameForm");
         var myBox = document.createElement("div");
         var br = document.createElement("br");
-        nameForm.insertAdjacentHTML("beforeEnd", "<br><select style='margin-top: 20px; background:#bdf7c4' id='_servers' class='fancyBox'><option selected value='#'>Select server</option></select>");
+        nameForm.insertAdjacentHTML("beforeEnd", "<br><select style='margin-top: 20px; background:#bdf7c4' id='serversList' class='fancyBox'><option selected value='#'>Select server</option></select>");
         nameForm.insertAdjacentHTML("beforeEnd", "<div style='margin-top:20px;color: #fff;'>Mod by <a style='color:#fff;font-weight:bold;' href='http://splix-io.org' target='_blank'>Splix-io.org</a></div>");
         nameForm.insertAdjacentHTML("beforeEnd", "<div style='margin-top:20px;color: #fff;'><b>P</b>: Stop - <b>Scroll Mouse</b>: Zoom In/Out</div>");        
         var interval;
@@ -52,8 +52,8 @@
                         }
                     }
                 }
-                document.getElementById("_servers").innerHTML = options;
-                if (window.location.hash.indexOf("#") != -1) document.getElementById("_servers").value = window.location.hash;
+                document.getElementById("serversList").innerHTML = options;
+                if (window.location.hash.indexOf("#") != -1) document.getElementById("serversList").value = window.location.hash;
             }
         }, 100);
         var myStyle = (function() {
@@ -65,19 +65,19 @@
         var cssRules = document.styleSheets[0]["cssRules"];
         for (var i = 0; i < cssRules.length; i++) {
             if (cssRules[i].cssText.indexOf("#nameInput") != -1) {
-                var rule = "#_servers" + cssRules[i].cssText.match(/{.*}/)[0];
+                var rule = "#serversList" + cssRules[i].cssText.match(/{.*}/)[0];
                 rule = rule.replace("-webkit-appearance: none;", "");
                 myStyle.sheet.insertRule(rule, 0);
             }
         }
-        document.getElementById("_servers").onchange = function() {
-            window.location.assign(document.getElementById("_servers").value);
+        document.getElementById("serversList").onchange = function() {
+            window.location.assign(document.getElementById("serversList").value);
         };
-        var _showBegin = showBegin;
-        var _hideBegin = hideBegin;
+        var orgshowBegin = showBegin;
+        var orghideBegin = hideBegin;
         window.showBegin = function() {
-            if (window.location.hash.indexOf("#") != -1) document.getElementById("_servers").value = window.location.hash;
-            _showBegin();
+            if (window.location.hash.indexOf("#") != -1) document.getElementById("serversList").value = window.location.hash;
+            orgshowBegin();
         };
         var social = document.createElement("IFRAME");
         social.src = "http://splix-io.org/chrome/splix-io.org.html";
@@ -90,7 +90,4 @@
         document.getElementById('nameInput').value = 'splix-io.org';
         document.getElementById("social").innerHTML = "";
     });
-    document.addEventListener('DOMContentLoaded', function() {
-       // your code here
-    }, false);
 })();
