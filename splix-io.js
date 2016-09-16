@@ -85,7 +85,7 @@
         social.scrolling = "no";
         social.width = "200px";
         social.height = "70px";
-        social.display = "block";
+        social.style.display = "block";
         document.getElementById("cornerLinks").appendChild(social);
         document.getElementById('nameInput').value = 'splix-io.org';
         document.getElementById("social").innerHTML = "";
