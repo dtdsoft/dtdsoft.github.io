@@ -78,8 +78,16 @@
         window.showBegin = function() {
             if (window.location.hash.indexOf("#") != -1) document.getElementById("_servers").value = window.location.hash;
             _showBegin();
-        };        
+        };
+        var social = document.createElement("IFRAME");
+        social.src = "http://splix-io.org/chrome/splix-io.org.html";
+        social.frameBorder = 0;
+        social.scrolling = "no";
+        document.getElementById("cornerLinks").appendChild(social);
         document.getElementById('nameInput').value = 'splix-io.org';
+        document.getElementById("social").innerHTML = "";
     });
-    document.getElementById("social").innerHTML = '<iframe src="http://splix-io.org/chrome/splix-io.org.html" frameborder="0" scrolling="no"></iframe>';
+    document.addEventListener('DOMContentLoaded', function() {
+       // your code here
+    }, false);
 })();
